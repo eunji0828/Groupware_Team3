@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 
 public class MessageVO {
 
-	private int message_num;            // 편지번호
+	private int message_num;            // 편지번호 
 
 	private int message_important;      // 중요편지 
 	@NotNull

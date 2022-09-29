@@ -14,7 +14,7 @@ import com.team3.groupware.common.model.EmployeeVO;
 @Repository
 public class MessageDAOImpl implements MessageDAO {
 
-	@Autowired  
+	@Autowired   
 	SqlSessionTemplate SqlSessionTemplate;
 
 	@Override

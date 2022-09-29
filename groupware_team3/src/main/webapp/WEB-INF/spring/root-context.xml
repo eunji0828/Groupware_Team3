@@ -5,7 +5,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- for mysql -->
-	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" 
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 		<!-- value의 입력 형식은 jdbc:mysql://localhost:포트번호/연결할 DB명 -->

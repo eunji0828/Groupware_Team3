@@ -8,7 +8,7 @@ public class MessageCriteria {
 		return keyword;
 	}
 
-	public void setKeyword(String keyword) { 
+	public void setKeyword(String keyword) {  
 		this.keyword = keyword;
 	}
 

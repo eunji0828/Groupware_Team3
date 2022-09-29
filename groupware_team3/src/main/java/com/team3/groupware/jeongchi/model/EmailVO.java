@@ -8,7 +8,7 @@ public class EmailVO {
 		private String message_title;
 		private String message_contents;
 		
-		public String getMessage_sender() { 
+		public String getMessage_sender() {  
 			return message_sender;
 		}
 		public void setMessage_senderName(String message_sender) {

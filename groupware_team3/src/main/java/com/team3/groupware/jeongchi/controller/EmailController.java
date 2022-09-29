@@ -14,7 +14,7 @@ import com.team3.groupware.jeongchi.service.EmailService;
 @RequestMapping("/email/*")
 public class EmailController {
 	
-	@Autowired 
+	@Autowired  
 	EmailService emailService;
 	
 	@RequestMapping("write.do")

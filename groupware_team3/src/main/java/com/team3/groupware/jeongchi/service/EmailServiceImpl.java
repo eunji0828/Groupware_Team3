@@ -14,7 +14,7 @@ import com.team3.groupware.jeongchi.model.MessageVO;
 @Service
 public class EmailServiceImpl implements EmailService {
 	@Autowired
-	JavaMailSender mailSender;
+	JavaMailSender mailSender; 
 	@Override 
 	public void sendMail(MessageVO vo) {
 		try {
