@@ -31,7 +31,7 @@ public class MessageController {
 	MessageService messageService;
 	
 	@Autowired
-	EmployeeService empService;
+	EmployeeService empService; 
 	
 	@Autowired
 	EmailService emailService;

@@ -11,7 +11,7 @@ public class BoardNoticeController {
 	public ModelAndView board_notice() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/jeongchi/board/board_notice");
-		return mv;
+		return mv; 
 	}
 
 }

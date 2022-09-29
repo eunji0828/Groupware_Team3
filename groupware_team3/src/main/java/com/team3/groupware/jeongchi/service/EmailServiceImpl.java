@@ -15,7 +15,7 @@ import com.team3.groupware.jeongchi.model.MessageVO;
 public class EmailServiceImpl implements EmailService {
 	@Autowired
 	JavaMailSender mailSender;
-	@Override
+	@Override 
 	public void sendMail(MessageVO vo) {
 		try {
 			MimeMessage msg=mailSender.createMimeMessage(); //이메일 객체

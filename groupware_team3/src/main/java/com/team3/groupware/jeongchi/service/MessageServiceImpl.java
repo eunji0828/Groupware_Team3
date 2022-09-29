@@ -16,7 +16,7 @@ import com.team3.groupware.jeongchi.model.MessageVO;
 public class MessageServiceImpl implements MessageService {
 
 	@Autowired
-	private MessageDAO messageDao;
+	private MessageDAO messageDao; 
 	
 	// 쪽지테이블에 첨부파일이 없는 쪽지 insert 하기
 	@Override

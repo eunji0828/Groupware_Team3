@@ -74,7 +74,7 @@
 					<c:if test="${map.page_info.curBlock <= map.page_info.totBlock }">
 						<a href="javascript:list('${map.page_info.totPage }')">[끝]</a>
 					</c:if>
-				</td>
+				</td> 
 			</tr>
 		</tbody>
 	</table>

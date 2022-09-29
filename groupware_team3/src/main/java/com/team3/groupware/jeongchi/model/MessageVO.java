@@ -10,7 +10,7 @@ public class MessageVO {
 
 	private int message_num;            // 편지번호
 
-	private int message_important;      // 중요편지
+	private int message_important;      // 중요편지 
 	@NotNull
 	@Pattern(regexp="/^[가-힣]*$/", message="한글만 입력가능합니다")
 	private String message_sender;      // 보낸사람

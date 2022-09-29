@@ -7,7 +7,7 @@ import com.team3.groupware.common.model.EmployeeVO;
 
 public interface MessageDAO {
 
-	void write(MessageVO messageVo);
+	void write(MessageVO messageVo); 
 
 	List<EmployeeVO> writeAddressSearch(String search_option, String keyword);
 
