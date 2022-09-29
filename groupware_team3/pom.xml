@@ -166,6 +166,22 @@
 			<version>5.2.4.Final</version>
 		</dependency>
 		<!-- 0919 김정치 valid 디펜던시 추가 끝  -->
+		
+		<!-- 0926 김정치 GMAIL 디펜던시 추가 -->
+		<!-- 메일 연동 -->
+      	<dependency>
+			<groupId>com.sun.mail</groupId>
+         	<artifactId>javax.mail</artifactId>
+         	<version>1.5.6</version>
+      	</dependency>
+      	<dependency>
+        	<groupId>org.springframework</groupId>
+         	<artifactId>spring-context-support</artifactId>
+	        <version>${org.springframework-version}</version>
+    	  </dependency>
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->		
+
+		<!-- 0926 김정치 GMAIL 디펜던시 추가 끝 -->
 
 		<!-- database -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
@@ -209,6 +225,15 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.30</version>
 		</dependency>
+
+		<!--	220922 17:47 성선규 추가	-->
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>

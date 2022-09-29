@@ -11,11 +11,11 @@ modal_close.addEventListener('click', () => {
     modal.style.display = 'none';
 });
 
-// 모달 on
-body.style.overflow = 'hidden';
-
-// 모달 off
-body.style.overflow = 'auto';
+//// 모달 on
+//body.style.overflow = 'hidden';
+//
+//// 모달 off
+//body.style.overflow = 'auto';
 
 
 

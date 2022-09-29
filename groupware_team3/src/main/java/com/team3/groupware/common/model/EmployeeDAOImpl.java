@@ -18,8 +18,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public List<EmployeeVO> writeAddress(Map<String, Object> empMap) {
 		
-		List<EmployeeVO> empList = SqlSessionTemplate.selectList("note.findList", empMap);
-		return empList;
+	List<EmployeeVO> empList = SqlSessionTemplate.selectList("note.findList", empMap);
+	return empList;
 	}	
 
 }

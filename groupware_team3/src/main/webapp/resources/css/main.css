@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+
 #home_content_container {
     display: flex;
     justify-content: space-around;
@@ -146,7 +147,7 @@
 
 #layoutSidenav_content .homebox2 .tabmenu ul {
     padding: 0;
-    height: 100%;
+    height: 600px;
     width: 100%;
 }
 
