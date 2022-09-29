@@ -167,9 +167,6 @@ window.onload = function(){
     	    if(checkAll.checked==true){
         	    for(let i=0; i<chkBox.length; i++){
             	chkBox[i].checked = true;
-        	    let innerEmpnum = chkBox[i].parentNode.parentNode.childNodes[4].innerHTML;
-            	console.log(innerEmpnum);
-            	arrNum.push(innerEmpnum);
             	}
     	    } else if (checkAll.checked==false){
         	    for(let i=0; i<chkBox.length; i++){
@@ -180,9 +177,16 @@ window.onload = function(){
         	}
     		// 쪽지 주소록에서 확인 버튼 누를 시 받는 사람으로 관련 내용 in
         	$("#write_address_selectCheck").click(function () {
-        		let arrNumJoin = arrNum.join(", ");
-    	    	console.log(arrNumJoin);
     	    	let messageReceiver = document.querySelector("#message_receiver");
+    	    	let arrNumJoin;
+        	    for(let i=0; i<chkBox.length; i++){
+        	    	if(chkBox[i].checked==true){
+            	    let innerEmpnum = chkBox[i].parentNode.parentNode.childNodes[4].innerHTML;
+                	console.log(innerEmpnum);
+                	arrNum.push(innerEmpnum);
+                	arrNumJoin = arrNum.join(", ");
+        	    	}
+            	}
     	    	messageReceiver.value = arrNumJoin;
         	    $(".message_modal").css("display", "none");		// 확인 버튼 클릭 시 모달 삭제
         	});
