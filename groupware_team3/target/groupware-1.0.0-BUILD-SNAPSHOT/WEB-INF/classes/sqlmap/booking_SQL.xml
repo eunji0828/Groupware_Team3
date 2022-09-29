@@ -4,9 +4,20 @@
     <select id="booking_List" resultType="com.team3.groupware.seongyu.model.BookingVO">
         <![CDATA[
             select
-                booking_num, booking_color, booking_title, meetingroom_num, fixtures_num, emp_num, booking_attendees, booking_start_date, booking_end_date, booking_memo
+                booking_num,
+                booking_color,
+                booking_title,
+                meetingroom_num,
+                fixtures_num,
+                emp_num,
+                booking_attendees,
+                booking_start_date,
+                booking_end_date,
+                booking_memo
             from
                 booking
+            where
+                emp_num = #{emp_num}
         ]]>
     </select>
 
@@ -26,7 +37,7 @@
 		<![CDATA[
             DELETE
             FROM
-                groupware.booking
+                booking
             WHERE
                 booking_num = #{booking_num};
         ]]>
@@ -48,13 +59,52 @@
             values
                 (#{meetingroom_num},
                  #{fixtures_num},
-                 990810,
+                 ${emp_num},
                  #{booking_attendees},
-                 #{booking_start_date},
-                 #{booking_end_date},
+                 ${booking_start_date},
+                 ${booking_end_date},
                  #{booking_title},
                  '#0d6efd',
                  #{booking_memo});
         ]]>
     </insert>
+
+    <update id="booking_update" parameterType="hashmap">
+        <![CDATA[
+            UPDATE
+                booking
+            SET
+                booking_title = #{booking_title},
+                booking_start_date = #{booking_start_date},
+                booking_end_date = #{booking_end_date},
+                booking_memo = #{booking_memo},
+                meetingroom_num = #{meetingroom_num},
+                fixtures_num = #{fixtures_num},
+                booking_attendees = #{booking_attendees}
+            WHERE
+                booking_num = #{booking_num}
+        ]]>
+    </update>
+
+    <select id="meetingroom_list" resultType="com.team3.groupware.seongyu.model.meetingroomVO">
+        <![CDATA[
+            SELECT
+                meetingroom_num,
+                meetingroom_name,
+                meetingroom_available
+            FROM
+                meetingroom
+        ]]>
+    </select>
+
+    <select id="fixture_list" resultType="com.team3.groupware.seongyu.model.fixtureVO">
+        <![CDATA[
+            SELECT
+                fixtures_num,
+                fixtures_available,
+                fixtures_name
+            FROM
+                fixtures;
+        ]]>
+    </select>
 </mapper>

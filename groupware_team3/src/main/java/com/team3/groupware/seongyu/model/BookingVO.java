@@ -1,13 +1,15 @@
 package com.team3.groupware.seongyu.model;
 
+import java.util.Date;
+
 public class BookingVO {
     private int booking_num;
     private String meetingroom_num;
     private String fixtures_num;
     private int emp_num;
     private String booking_attendees;
-    private String booking_start_date;
-    private String booking_end_date;
+    private Date booking_start_date;
+    private Date booking_end_date;
     private String booking_title;
     private String booking_color;
     private String booking_memo;
@@ -52,19 +54,19 @@ public class BookingVO {
         this.booking_attendees = booking_attendees;
     }
 
-    public String getBooking_start_date() {
+    public Date getBooking_start_date() {
         return booking_start_date;
     }
 
-    public void setBooking_start_date(String booking_start_date) {
+    public void setBooking_start_date(Date booking_start_date) {
         this.booking_start_date = booking_start_date;
     }
 
-    public String getBooking_end_date() {
+    public Date getBooking_end_date() {
         return booking_end_date;
     }
 
-    public void setBooking_end_date(String booking_end_date) {
+    public void setBooking_end_date(Date booking_end_date) {
         this.booking_end_date = booking_end_date;
     }
 
