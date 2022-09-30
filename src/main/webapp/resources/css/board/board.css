@@ -1,4 +1,19 @@
-/* 게시판리스트 */
+/*
+백진주
+220909
+게시판 디자인 완료
+220929 이은지 게시판 넘겨받음
+글쓰기 버튼 디자인 수정 
+*/
+
+@font-face {
+    font-family: 'BBTreeGR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 게시판 상위 디자인 */
 .content_box {
     height: 80px;
     width: 100%;
@@ -9,22 +24,40 @@
     font-weight: bold;
     display: flex;
     align-items: center;
+    position: relative;
+    min-width: 900px;
+}
+/* 아이콘 마진 */
+.fa-clipboard{
+	margin-right: 5px;
 }
 .board_con{
     font-family: 'BBTreeGR';
     font-weight: bold;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top : 50px;
+    margin: 50px 20px 20px;
 }
+
+/* 게시글 작성 버튼 */
 .board_write_btn{
-    margin: 10px;
-    background-color: RGB(13, 110, 253);
-    color: white;
-    border: none;
-    width: 100px;
-    height: 30px;
+    position: absolute;
+    left: 195px;
+    top: 28px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    padding: 6px;
+    color: dimgray;
+    border: 2px solid dimgray;
+    background-color: white;
+    transition: all 0.3s;
 }
+.board_write_btn:hover{
+	background-color: rgb(13, 110, 253);
+    color: white;
+    border: 2px solid rgb(13, 110, 253);
+}
+
+/* 게시글 테이블 */
 .board_table_position{
     margin: 10px;
 }
@@ -50,7 +83,7 @@
    cursor: pointer;
 }
 .table_bg{
-    background-color: RGB(13, 110, 253);;
+    background-color: gray;
     color: white;
     text-align: center;
 }
@@ -58,6 +91,37 @@
     text-align: left !important;
     padding-left: 20px !important;
 }
+
+/* 게시글 저장 취소 버튼 */
+.board_bottom_btn{
+  text-align: center;
+  margin: 30px;
+}
+.board_btn{
+  border-radius: 15px;
+  padding: 3px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'BBTreeGR';
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: white;
+  border: 2px solid black;
+  width: 100px;
+  height: 30px;
+  margin: 15px 20px;
+}
+.board_submit_btn:hover{
+	background-color: rgb(13, 110, 253);
+    color: white;
+    border: 2px solid rgb(13, 110, 253);
+}
+.board_cancel_btn:hover{
+	background-color: gray;
+    color: white;
+    border: 2px solid gray;
+}
+
 
 /*페이지넘버링*/
 .board_list_number{
@@ -123,13 +187,17 @@
   width: 100%;
   height: 100%;
 }
-#board_write_container 
+.board_write_insert_info{
+	display: flex;
+	flex-derection: row;
+}
 .board_write_insert_info table{
+  font-family: 'BBTreeGR';
+  font-size: 1rem;
   width: 100%;
   margin-top: 15px;
   border: 1px solid gray;
 }
-#board_write_container 
 .board_write_insert_info table tr{
   border : 1px solid gray;
 }
@@ -173,8 +241,7 @@
 .board_write_textarea{
   border: 1px solid gray;
   margin-top: 15px;
-  height: 50%;
-  color: crimson;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,18 +255,7 @@
   text-align: left;
   padding: 10px;
 }
-.board_bottom_btn{
-  margin-top: 15px;
-  text-align: center;
-}
-.board_bottom_btn button{
-  width: 100px;
-  height: 30px;
-  margin: 0 20px;
-  background-color: RGB(13, 110, 253);
-  color: white;
-  border: none;
-}
+
 /* 댓글달기 */
 /* .footerText{
   border: 1px solid blue;

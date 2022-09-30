@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
@@ -23,14 +24,14 @@ public class WorktimeDAOImpl implements WorktimeDAO {
 	}
 
 	@Override
-	public List<WorktimeVO> worktime_view_select() {
-		return session.selectList("worktime.worktime_view_select");
+	public List<WorktimeVO> worktime_view_select(int emp_num) {
+		return session.selectList("worktime.worktime_view_select", emp_num);
 	}
 
 	
 	@Override
-	public Map<String, Object> select_vacation_days(WorktimeVO worktimeVo) {	
-		return session.selectOne("worktime.worktime_vacation_days", worktimeVo);
+	public Map<String, Object> select_vacation_days(int emp_num) {	
+		return session.selectOne("worktime.worktime_vacation_days", emp_num);
 	}
 
 	// ajax dao 오버라이드

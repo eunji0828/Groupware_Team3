@@ -1,12 +1,23 @@
+/*
+ * 백진주 ~220909
+ * //1.입력받으면 입력값 초기화
+   //2. 입력값 댓글로들어가기
+   //3. 댓글 삭제, 수정기능
+   //4. 좋아요 투표기능
+   //5. 타임스템프기능
+   //6. 무작위 아이디  
+   //7. 댓글 삭제기능
+   //8. 댓글 수정기능
+   220928 ~ 이은지
+   ck에디터 추가
+ * */
 
-//1.입력받으면 입력값 초기화
-//2. 입력값 댓글로들어가기
-//3. 댓글 삭제, 수정기능
-//4. 좋아요 투표기능
-//5. 타임스템프기능
-//6. 무작위 아이디  
-//7. 댓글 삭제기능
-//8. 댓글 수정기능
+// ck editor
+  CKEDITOR.replace('ckeditor', {
+	  // 너비설정
+	  width: '1505',
+	  height: '459',
+  });
 
 const inputBar = document.querySelector("#board_comment_input");
 const rootDiv = document.querySelector("#board_comments_con");
@@ -254,4 +265,4 @@ function pressBtn(){
    }
 }
 
-btn.onclick = pressBtn;
+//btn.onclick = pressBtn;

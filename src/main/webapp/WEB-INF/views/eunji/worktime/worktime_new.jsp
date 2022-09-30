@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+	
 
 </head>
   
@@ -44,7 +44,8 @@
                                 <option value="vacation">연차</option>
                                 <option value="halfway">반차</option>
                                 <option value="sick_leave">병가</option>
-                                <option value="business_trip">출장</option>
+                                <option value="early_departure">조퇴</option>
+                                 <option value="business_trip">외출</option>
                             </select>
                             </td>
                         </tr>
@@ -103,7 +104,8 @@
     
     				<!-- 휴가계 내용 작성  -->
                     <div class="table_box_thr">
-                    <table class="input_table">
+             
+                     <table class="input_table">
                         <tr class="input_table_size">
                             <td>휴가계</td>
                             <td colspan="6"></td>
@@ -113,32 +115,48 @@
                             <td class="table_size">${WorktimeNameMap.dept_name}</td>
                             <td>기안일</td>
                             <td class="table_size worktime_new_date"></td>
-                            <td>문서번호</td>
+                            <td class="docu_num_width">문서번호</td>
                             <td class="table_size">자동설정</td>
                         </tr>
-                        <tr>
-                            <td>제목</td>
-                            <td colspan="6"><input type="text" id="worktime_docu_title"></td>
+
+                  		<tr>
+                     		<td>휴가 기간</td>
+                            <td colspan="2" class="date_width"><input type="date"> ~ <input type="date"></td>
+                    		<td>행선지</td>
+                            <td colspan="2"><input type="text"></td>
+                  		</tr>   
+                       <tr>
+                           <td>제목</td>
+                           <td colspan="6"><input type="text" id="worktime_docu_title"></td>
                         </tr>
-                    </table>
+
+                        <tr>
+                            <td>사유</td>
+                            <td colspan="6"><input type="text"  id="worktime_docu_reason"></td>
+                        </tr>
+                        <tr>
+                        	<td>첨부 파일</td>
+                        	<td colspan="6"><input type="file" id="file_text_align"></td>
+                        </tr>
+                    </table> 
+                    
                 </div>
                 <div class="worktime_new_api">
-                     <div name="editordata" class="worktime_docu_text">
-                     	<div id="description" name="description"></div>
-                     </div>
+                    <div id="ckeditor" name="ckeditor"></div>
+                </div>
                    
                    <!-- 최종결재자 의견  -->
                 </div>
                 <div class="worktime_result_write">
-                    <div>최종결재자 의견</div>
+                    <div>결재자 의견</div>
                     <input type="text" id="worktime_result">
                 </div>
-                <div class="worktime_btn">
+               	 <div class="worktime_btn">
                     <input type="submit" value="상신" class="worktime_input_btn worktime_approval">
                     <input type="button" value="취소" class="worktime_input_btn worktime_cancel">
                  </div>
                  </form>
-                  </div>
+                </div>
          </div>
         
          
@@ -203,7 +221,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
         <script src="../../resources/js/worktime/worktime_new.js"></script>
- 
+ 		<script src = "resources/api/ckeditor4_standard/ckeditor.js"></script>
 
 </body>
 

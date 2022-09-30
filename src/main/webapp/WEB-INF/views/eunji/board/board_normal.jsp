@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
@@ -21,10 +22,10 @@
         <div id="layoutSidenav_content">
             <div class="content_box">
                 <i class="fa-regular fa-clipboard"></i>일반게시판
+                    <a href="/board_write">
+                    <button class="board_write_btn">게시글 작성</button></a>
             </div>
             <div class="board_con">
-                <a href="board_write.html">
-                    <button class="board_write_btn">글쓰기</button></a>
                     <div class="board_table_position">
                     <table class="board_table">
                         <tr class="table_bg">
@@ -34,21 +35,15 @@
                             <td>작성일</td>
                             <td>조회수</td>
                         </tr>
+                        <c:forEach var="board_normal" items="${boardNormalList}">
                         <tr class="board_table_hover">
-                            <td>80</td>
-                            <td class="table_title_left"><a href="board_view.html">
-                                금일 구로도에서 번개모임 [7]</a></td>
-                            <td>이은지</td>
-                            <td>2022-08-01 11:46:02</td>
-                            <td>11</td>
-                        </tr>
-                        <tr class="board_table_hover">
-                            <td>78</td>
-                            <td class="table_title_left">끝나고 남으세요 [4]</td>
-                            <td>김정치</td>
-                            <td>2022-08-01 01:30:48</td>
-                            <td>2</td>
-                        </tr>                    
+                            <td>${board_normal.board_num}</td>
+                            <td class="table_title_left">${board_normal.board_title}</td>
+                            <td>${board_normal.emp_name}</td>
+                            <td>${board_normal.board_write_date}</td>
+                            <td>${board_normal.board_count}</td>
+                        </tr> 
+                        </c:forEach>                  
                     </table>
                     <!-- 페이징 영역 -->
                     <div class="board_list_number">
@@ -79,6 +74,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>   
     <script src="../../resources/js/board/board.js"></script>
+    <script src = "resources/api/ckeditor4_full/ckeditor.js"></script>
 </body>
 
 </html>

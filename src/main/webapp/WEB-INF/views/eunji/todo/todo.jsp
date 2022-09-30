@@ -40,14 +40,14 @@
 			<div class="content_box_two">
 				<p>즐겨찾는 보드</p>
 				<div class="box_position">
-					<div class="favorite_borad_box">
-						<div class="favorite_content_box">
-							<p>스타트업 계획</p>
-							<i class="xi-star-o"></i>
-							<p class="favorite_borad_box_font">스타트업 강의 중 인원 확인 후 지난주 회의록
-								앞의 두장만 다시 뽑아 서명받아야..</p>
-						</div>
-					</div>
+				<!--	<div class="favorite_borad_box">
+						 <div class="favorite_content_box">
+							<p></p>
+							<i class="xi-star-o" title="즐겨찾기"></i>
+							<i class="xi-close-min" title="삭제"></i>
+							<p class="favorite_borad_box_font"></p>
+						</div> 
+					</div>-->
 				</div>
 			</div>
 			
@@ -57,28 +57,36 @@
 				<div class="box_position my_board_list">
 
 					<!-- todo 생성 -->
+					
 					<c:forEach var="todo" items="${todoMapList}">
+					<form action="/todo" method="post"><input type="hidden" name="todo_emp_num" value="${emp_num}">
 					<div class="my_borad_box">
-						<div class="my_content_box">
-							<p class="todo_title">${todo.todo_title}</p>
+						<div class="my_content_box" id="my_board_modal">
+							<p class="todo_title" id="todo_title">${todo.todo_title}</p>
 							<i class="xi-star-o" title="즐겨찾기"></i>
 							<i class="xi-close-min" title="삭제"></i>
-							<p class="my_borad_box_font">${todo.todo_contents}</p>
+							<input type="hidden" name="todo_num" value="${todo.todo_num}">
+							<p class="my_borad_box_font todo_contents" id="todo_contents">${todo.todo_contents}</p>
 						</div>
 					</div>
-					</c:forEach>
-				
+					</form>
+					</c:forEach>	
 				</div>
 			</div>
 			
 		</div>
-	</div>
 
 	<!-- 모달 창 -->
+	<script>
+		let emp_num=${sessionScope.emp_num};
+	</script>
 	<div class="todo_modal_back">
-		<div id="todo_modal">
-			제목<br> <input type="text" id="todo_modal_title" name="todo_title" size="25"><br> 
-			내용<br> <textarea name="todo_contents" id="todo_modal_text" cols="30"
+		<div id="todo_modal" class="tdo_modal">
+			<div id="create_todo">Create my Todo</div>
+			<div id="create_todo_title">제목</div> 
+			<input type="text" id="todo_modal_title" name="todo_title" size="25"><br> 
+			<div id="create_todo_contents">내용</div> 
+			<textarea name="todo_contents" id="todo_modal_text" cols="30"
 				rows="10"></textarea>
 			<br>
 			<div class="todo_btn_center">

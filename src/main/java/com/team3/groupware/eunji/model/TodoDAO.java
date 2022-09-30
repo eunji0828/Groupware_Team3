@@ -7,9 +7,13 @@ public interface TodoDAO {
 
 	void todo_insert(Map<String, Object> map);
 	
-	List<TodoVO> todo_board_list(Map<String, Object> map);
+	List<TodoVO> todo_board_list(int emp_num);
 
 	TodoVO todo_board_NEW(Map<String, Object> map);
+
+	void todo_delete(TodoVO todoVo);
+
+	
 
 
 }

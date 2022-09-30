@@ -1,4 +1,4 @@
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,6 +29,7 @@
             <div class="commute_input">
                  <p>출퇴근입력</p>
                  <form name="form1" class="commute_position" method="post" action="/worktime">
+                 <input type="hidden" name="emp_num" value="${emp_num}">
                  <div class="worktime_date">입력일: </div>
                  <div>출근시간입력 <input type="time" name="worktime_go" id="worktime_go" class="commute_input_goto commute_intput_margin"></div>
                  <div>퇴근시간입력 <input type="time" name="worktime_out" id="worktime_out" class="commute_input_leave commute_intput_margin"></div>
@@ -42,7 +43,8 @@
                 <div>내 연차 내역 <a href="/worktime_new"><input type="button" value="휴가계신청" id="annual_leave_btn"></div></a>
                 <div class="my_annual_leave_list">
                     <div class="my_annual_name">
-                    <p>${worktimeMap.emp_name} ${worktimeMap.position_grade}<br>${worktimeMap.dept_name}</p>
+                    <p>${worktimeMap.emp_name} ${worktimeMap.position_grade}<br>
+                       ${worktimeMap.dept_name}</p>
                     </div>
                       <div class="my_annual_width">
                        <table id="my_annual_table">
